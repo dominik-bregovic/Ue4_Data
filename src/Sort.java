@@ -17,41 +17,76 @@ public class Sort {
      */
     public void sortByAgeAscending(Student[] student_array, int i, int j){
 
-        // hier müssten glaube ich die werte mit einer compare methode verglichen werden
         if (i >= j){
             return;
         }
-        int p = (int) Math.floor((i+j)/2);
+        int p = (int)Math.floor((i+j)/2);
+        Student floor = new Student(p, "");
 
         sortByAgeAscending(student_array, i, p);
         sortByAgeAscending(student_array, p+1, j);
 
-        if (student_array[j] == student_array[p]){
+        if (student_array[j].getAge() < student_array[p].getAge()){
             swap(j, p);
         }
         sortByAgeAscending(student_array, i, j-1);
-
     }
 
     /**
      * Sorts the students array by name in ascending order
      */
-    public void sortByNameAscending(){
-        //TODO
+    public void sortByNameAscending(Student[] student_array, int i, int j){
+
+        if (i >= j){
+            return;
+        }
+        int p = (int) Math.floor((i+j)/2);
+
+        sortByNameAscending(student_array, i, p);
+        sortByNameAscending(student_array, p+1, j);
+
+        if (0 > student_array[j].getName().compareToIgnoreCase(student_array[p].getName())){
+            swap(j, p);
+        }
+        sortByNameAscending(student_array, i, j-1);
     }
 
     /**
      * Sorts the students array by age in descending order
      */
-    public void sortByAgeDescending(){
-        //TODO
+    public void sortByAgeDescending(Student[] student_array, int i, int j){
+
+        if (i >= j){
+            return;
+        }
+        int p = (int) Math.floor((i+j)/2);
+
+        sortByAgeDescending(student_array, i, p);
+        sortByAgeDescending(student_array, p+1, j);
+
+        if (student_array[j].getAge() > student_array[p].getAge()){
+            swap(j, p);
+        }
+        sortByAgeDescending(student_array, i, j-1);
     }
 
     /**
      * Sorts the students array by name in descending order
      */
-    public void sortByNameDescending(){
-        //TODO
+    public void sortByNameDescending(Student[] student_array, int i, int j){
+
+        if (i >= j){
+            return;
+        }
+        int p = (int) Math.floor((i+j)/2);
+
+        sortByNameDescending(student_array, i, p);
+        sortByNameDescending(student_array, p+1, j);
+
+        if (0 < student_array[j].getName().compareToIgnoreCase(student_array[p].getName())){
+            swap(j, p);
+        }
+        sortByNameDescending(student_array, i, j-1);
     }
 
     /**

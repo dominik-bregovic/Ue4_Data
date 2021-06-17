@@ -13,6 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+
         if (args.length != 1) {
             System.err.println("Error: Please specify an input file");
             System.exit(-1);
@@ -39,20 +40,20 @@ public class Main {
         String result="";
         switch(task){
             case "sortByAgeAscending":
-                my_sort.sortByAgeAscending(students, 0, students.length-1);
+                my_sort.sortByAgeAscending(students,0,students.length-1);
                 result = my_sort.getAgesAsString();
                 break;
             case "sortByNameAscending":
-                my_sort.sortByNameAscending();
+                my_sort.sortByNameAscending(students,0,students.length-1);
                 result = my_sort.getNamesAsString();
                 break;
             case "sortByAgeDescending":
-                my_sort.sortByAgeDescending();
+                my_sort.sortByAgeDescending(students,0,students.length-1);
                 result = my_sort.getAgesAsString();
                 break;
 
             case "sortByNameDescending":
-                my_sort.sortByNameDescending();
+                my_sort.sortByNameDescending(students,0,students.length-1);
                 result = my_sort.getNamesAsString();
                 break;
         }
